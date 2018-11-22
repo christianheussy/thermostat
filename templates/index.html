@@ -15,7 +15,8 @@
 
     <div class="container">
     <h1>Current Temp is: {{ temp }}</h1>
-    {% if relay % }
+    
+    {% if relay %}
     <h1>Relay Status: <b>On</b></h1>
     {% else %}
     <h1>Relay Status: <b>Off</b></h1>
@@ -27,6 +28,7 @@
     {{ form.on_btn }}
     {{ form.off_btn }}
     </form>
+    
     </div>
 
 </body>
