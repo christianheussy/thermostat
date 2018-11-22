@@ -14,10 +14,19 @@
 <body>
 
     <div class="container">
-      <h1>Select a mode</h1>
-      <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Automatic Mode</a>
-      <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Heat On</a>
-      <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Heat Off</a>
+    <h1>Current Temp is: {{ temp }}</h1>
+    {% if relay % }
+    <h1>Relay Status: <b>On</b></h1>
+    {% else %}
+    <h1>Relay Status: <b>Off</b></h1>
+    {% endif %}
+
+    <form method="post">
+    {{ form.hidden_tag() }}
+    {{ form.auto_btn }}
+    {{ form.on_btn }}
+    {{ form.off_btn }}
+    </form>
     </div>
 
 </body>

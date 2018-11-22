@@ -15,7 +15,6 @@ class Controller:
         self.state_object = state_object
         self.temp = None
         self.humidity = None
-
         self.session = db_sesstion()
 
     def write_data(self):
@@ -50,7 +49,7 @@ class Controller:
             
             self.write_data()
 
-            #time.sleep(period)
+            # time.sleep(period)
 
     def start_controller(self, daemon=True, period=1):
         """This method starts a thread"""
@@ -58,6 +57,3 @@ class Controller:
         if daemon:
             t.daemon = True
         t.start()
-
-
-
